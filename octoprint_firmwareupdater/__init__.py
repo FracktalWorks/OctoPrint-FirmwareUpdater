@@ -116,7 +116,7 @@ class FirmwareupdaterPlugin(octoprint.plugin.BlueprintPlugin,
 			uploaded_hex_path = flask.request.values[input_upload_path]
 
 			# create a temporary
-			
+
 			try:
 				file_to_flash = tempfile.NamedTemporaryFile(mode='r+b', delete=False)
 				file_to_flash.close()
@@ -192,7 +192,7 @@ class FirmwareupdaterPlugin(octoprint.plugin.BlueprintPlugin,
 			except:
 				e = sys.exc_info()[0]
 				self._logger.error("Error executing pre-flash commandline '{}'".format(preflash_command))
-			
+
 			self._logger.info("Pre-flash command '{}' returned: {}".format(preflash_command, r))
 
 		try:
@@ -245,7 +245,7 @@ class FirmwareupdaterPlugin(octoprint.plugin.BlueprintPlugin,
 						except:
 							e = sys.exc_info()[0]
 							self._logger.error("Error executing post-flash commandline '{}'".format(postflash_command))
-						
+
 						self._logger.info("Post-flash command '{}' returned: {}".format(postflash_command, r))
 
 					postflash_gcode = self._settings.get(["postflash_gcode"])
@@ -346,12 +346,12 @@ class FirmwareupdaterPlugin(octoprint.plugin.BlueprintPlugin,
 
 				# version check: github repository
 				type="github_release",
-				user="OctoPrint",
+				user="FracktalWorks",
 				repo="OctoPrint-FirmwareUpdater",
 				current=self._plugin_version,
 
 				# update method: pip
-				pip="https://github.com/OctoPrint/OctoPrint-FirmwareUpdater/archive/{target_version}.zip"
+				pip="https://github.com/FracktalWorks/OctoPrint-FirmwareUpdater/archive/{target_version}.zip"
 			)
 		)
 
